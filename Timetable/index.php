@@ -1,15 +1,15 @@
 <?php
 // 接收参数
-$class = $_GET['class'] ?? '23-1';
-$style = $_GET['style'] ?? '1';
+$class = $_GET['class'] ?? null;
+$style = $_GET['style'] ?? "1";
 $updata = $_GET['updata'] ?? null;
 $list = $_GET['list'] ?? null;
 $week = $_GET['week'] ?? null;
 
-if(!empty($list)) {
+if(!empty($list) || is_null($class)) {
     require_once 'list.php';
-    list_process($list);
-    die();
+    list_process($list ?? '1');
+    exit();
 }
 
 // 包含auth.php进行验证
