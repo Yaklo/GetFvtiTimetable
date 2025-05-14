@@ -116,6 +116,7 @@ $captchaData = getCaptchaData();
     <div class="container">
         <h2>福职课表刷新 - <?=$classyear?><?=$classname?></h2>
         <div id="error-msg"><?php echo $captchaData['error']; ?></div>
+        <?php if(empty($captchaData['error'])): ?>
         <form action="" method="post">
                 <input type="hidden" name="class" value="<?php echo $class; ?>">
             <div class="form-group">
@@ -129,6 +130,13 @@ $captchaData = getCaptchaData();
             </div>
             <input type="submit" id="submit-btn" value="提交">
         </form>
+        <?php else: ?>
+            <div class="form-group">
+                <input type="text" id="captcha-input" name="yzm" disabled>
+                <input type="submit" id="submit-btn" value="提交" disabled>
+            </div>
+            <a href="?updata=1&class=<?php echo $class; ?>" class="btn">检测到校园网节点离线，点我使用备用接口</a>
+        <?php endif; ?>
     </div>
 </body>
 </html>

@@ -59,7 +59,8 @@
             <input type="hidden" name="class" value="<?php echo $class; ?>">
             <div class="form-group">
                 <div>为避免请求过快更新一次需要至少20秒</div>
-                <label for="data">输入内容：</label>
+                <div>本接口用法比较繁琐，不了解需要提交的参数时请勿随意提交</div>
+                <label for="data">WebVPN Cookie：</label>
                 <input type="text" id="data" name="cookie" required>
             </div>
             <input type="submit" value="提交">
