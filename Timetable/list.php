@@ -34,6 +34,12 @@ function list_process($list) {
         echo "<a href='?class={$class}&updata=2' style='padding: 5px 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 4px;'>更新课表</a>";
         echo "</div></div>";
     }
+    echo "<div style='border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 250px;'>";
+    echo "<h3>Github</h3>";
+    echo "<p>本项目已开源</p>";
+    echo "<div style='display: flex; gap: 10px; margin-top: 10px;'>";
+    echo "<a href='https://github.com/Yaklo/GetFvtiTimetable' style='padding: 5px 10px; background: #9C27B0; color: white; text-decoration: none; border-radius: 4px;' target='_blank'>GOGOGO</a>";
+    echo "</div></div>";
     echo "</div>";
 }
 ?>
