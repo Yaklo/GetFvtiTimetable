@@ -43,14 +43,21 @@ function load_timetable_data($class, $week) {
         ];
     }
 
+    // 获取当前是星期几
+    $currentDayOfWeek = $today->format('N'); // 1-7 (星期一-星期日)
+    $isCurrentWeek = ($selectedWeek == $onWeek);
+
     return [
         'data' => $data,
         'updateTime' => $updateTime,
+        'today' => $today,
         'selectedWeek' => $selectedWeek,
         'onWeek' => $onWeek,
         'weekData' => $weekData,
         'weekDates' => $weekDates,
         'periods' => $periods,
+        'currentDayOfWeek' => $currentDayOfWeek,
+        'isCurrentWeek' => $isCurrentWeek,
         'classyear' => $classyear,
         'classname' => $classname,
         'tableinfo' => $tableinfo,
