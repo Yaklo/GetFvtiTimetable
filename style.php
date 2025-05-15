@@ -10,7 +10,8 @@ function load_timetable_data($class, $week) {
     $today = new DateTime('now');
     $diff = $week1Monday->diff($today);
     $days = $diff->invert ? -$diff->days : $diff->days;
-    $onWeek = max(1, floor(($days) / 7) + 1);
+    $nowWeek = floor(($days) / 7) + 1;
+    $onWeek = min(max(1, $nowWeek), 20);
     $selectedWeek = isset($week) ? min(max(intval($_GET['week']), 1), 20) : $onWeek;
 
     // 加载课程数据
