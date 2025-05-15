@@ -246,8 +246,9 @@
             浏览器输入 otoo.top/<?=$otoourl?> 访问课表
             <?php endif; ?>
             <br>
-            <a href="?style=2<?=!empty($_GET["class"])? "&class=".$_GET["class"] : "" ?><?=!empty($_GET["week"])? "&week=".$_GET["week"] : "" ?>" class="week-btn" style="padding:3px 40px">切换样式</a>
+            <a href="?style=2<?=!empty($_GET["class"])? "&class=".$_GET["class"] : "" ?><?=!empty($_GET["week"])? "&week=".$_GET["week"] : "" ?>" class="week-btn" style="padding:3px 15px">切换样式</a>
             <a href="?style=0<?=!empty($_GET["class"])? "&class=".$_GET["class"] : "" ?><?=!empty($_GET["week"])? "&week=".$_GET["week"] : "" ?>" class="week-btn" style="padding:3px 15px">去除按钮</a>
+            <a href="?class=<?=$class?>&updata=2" class="week-btn" style="padding:3px 15px">更新课表</a>
         </div>
 
         <div class="week-buttons">
