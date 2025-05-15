@@ -1,5 +1,6 @@
 <?php
 function list_process($list) {
+    echo "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>福职课表列表</title>\n</head>\n<body>";
     $tabledata_path = __DIR__ . '/tabledata';
     
     if (!is_dir($tabledata_path)) {
@@ -45,5 +46,6 @@ function list_process($list) {
     echo "<a href='https://github.com/Yaklo/GetFvtiTimetable' style='padding: 5px 10px; background: #9C27B0; color: white; text-decoration: none; border-radius: 4px;' target='_blank'>GOGOGO</a>";
     echo "</div></div>";
     echo "</div>";
+    echo "</body>\n</html>";
 }
 ?>
