@@ -91,6 +91,7 @@ $captchaData = getCaptchaData();
             padding: 0.5rem;
             border-radius: 4px;
             background-color: rgba(231, 76, 60, 0.1);
+            display: none;
         }
         
         #captcha-img {
@@ -181,7 +182,9 @@ $captchaData = getCaptchaData();
 <body>
     <div class="container">
         <h2>福职课表刷新 - <?=$classyear?><?=$classname?></h2>
-        <div id="error-msg"><?php echo $captchaData['error']; ?></div>
+        <?php if(!empty($captchaData['error'])): ?>
+            <div id="error-msg" style="display: block"><?php echo $captchaData['error']; ?></div>
+        <?php endif; ?>
         <?php if(empty($captchaData['error'])): ?>
         <form action="" method="post">
                 <input type="hidden" name="class" value="<?php echo $class; ?>">
