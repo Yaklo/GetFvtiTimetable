@@ -1,10 +1,15 @@
 <?php
-// 接收参数
-$class = $_GET['class'] ?? null;
-$style = $_GET['style'] ?? "1";
-$updata = $_GET['updata'] ?? null;
-$list = $_GET['list'] ?? null;
-$week = $_GET['week'] ?? null;
+// 接收并验证参数
+function sanitize_input($data) {
+    return htmlspecialchars(strip_tags(trim($data)), ENT_QUOTES, 'UTF-8');
+}
+
+$class = isset($_GET['class']) ? sanitize_input($_GET['class']) : null;
+$style = isset($_GET['style']) ? sanitize_input($_GET['style']) : "1";
+$updata = isset($_GET['updata']) ? sanitize_input($_GET['updata']) : null;
+$list = isset($_GET['list']) ? sanitize_input($_GET['list']) : null;
+$week = isset($_GET['week']) ? sanitize_input($_GET['week']) : null;
+
 
 if(!empty($list) || is_null($class)) {
     require_once 'list.php';
