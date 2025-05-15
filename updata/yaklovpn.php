@@ -197,7 +197,10 @@ $captchaData = getCaptchaData();
                 <input type="text" id="captcha-input" name="yzm" required>
                 <input type="hidden" id="phpsessid" name="phpsessid" value="<?php echo $captchaData['phpsessid']; ?>">
             </div>
-            <input type="submit" id="submit-btn" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>">
+            <div style="display: flex; gap: 10px;">
+                <input type="submit" id="submit-btn" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>" style="flex: 3;">
+                <a href="?class=<?php echo $class; ?>&updata=<?php echo $updata; ?>&upmode=<?php echo $upmode === "1" ? "0" : "1" ?>" class="btn" style="flex: 1;">模式切换</a>
+            </div>
         </form>
         <?php else: ?>
             <a href="?class=<?php echo $class; ?>&updata=1" class="btn">检测到校园网节点离线，点我使用备用接口</a>

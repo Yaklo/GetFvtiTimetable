@@ -87,6 +87,21 @@
             transform: translateY(-2px);
         }
         
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+        
         .message {
             font-size: 1.1rem;
             margin-bottom: 2rem;
@@ -106,7 +121,10 @@
                 <label for="data">WebVPN Cookie：</label>
                 <input type="text" id="data" name="cookie" required>
             </div>
-            <input type="submit" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>">
+            <div style="display: flex; gap: 10px;">
+                <input type="submit" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>" style="flex: 3;">
+                <a href="?class=<?php echo $class; ?>&updata=<?php echo $updata; ?>&upmode=<?php echo $upmode === "1" ? "0" : "1" ?>" class="btn" style="flex: 1;">模式切换</a>
+            </div>
         </form>
     </div>
 </body>

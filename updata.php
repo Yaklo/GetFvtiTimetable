@@ -48,7 +48,8 @@ function updata_process($class, $updata, $upmode, $yzm, $phpsessid, $cookie) {
         'phpsessid' => $phpsessid,
         'cookie' => $cookie,
         'selectedWeek' => $selectedWeek,
-        'stopinfo' => $stopinfo
+        'stopinfo' => $stopinfo,
+        'upmode' => $upmode,
     ];
 
     // 根据请求方法和更新方式调用对应的模板文件
