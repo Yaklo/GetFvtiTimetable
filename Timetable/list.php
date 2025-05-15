@@ -14,7 +14,7 @@ function list_process($list) {
         return;
     }
     
-    echo "<div style='display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;'>";
+    echo "<div style='display: flex; flex-wrap: wrap; gap: 25px; padding: 25px; max-width: 1400px; margin: 0 auto;'>";
     foreach ($subfolders as $folder) {
         $class = basename($folder);
         $dataFile = "{$folder}/data.json";
@@ -29,19 +29,19 @@ function list_process($list) {
         
         $updateData = json_decode(file_get_contents("{$folder}/update.json"), true);
         
-        echo "<div style='border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 250px;'>";
-        echo "<h3>{$classyear}级 {$classname}</h3>";
-        echo "<p>{$tableinfo}({$class})</p>";
-        echo "<p style='font-size: 0.8em; color: #666;'>更新时间: {$updateData['update']}</p>";
-        echo "<div style='display: flex; gap: 10px; margin-top: 10px;'>";
-        echo "<a href='?class={$class}' style='padding: 5px 10px; background: #4CAF50; color: white; text-decoration: none; border-radius: 4px;'>查看课表</a>";
-        echo "<a href='?class={$class}&updata=2' style='padding: 5px 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 4px;'>更新课表</a>";
+        echo "<div style='border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; width: 280px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;'>";
+        echo "<h3 style='margin: 0 0 10px 0; color: #333; font-size: 1.2em;'>{$classyear}级 {$classname}</h3>";
+        echo "<p style='margin: 0 0 10px 0; color: #555;'>{$tableinfo}({$class})</p>";
+        echo "<p style='font-size: 0.8em; color: #777; margin: 0 0 15px 0;'>更新时间: {$updateData['update']}</p>";
+        echo "<div style='display: flex; gap: 12px; margin-top: 15px;'>";
+        echo "<a href='?class={$class}' style='padding: 8px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 6px; transition: all 0.2s ease;'>查看课表</a>";
+        echo "<a href='?class={$class}&updata=2' style='padding: 8px 15px; background: #2196F3; color: white; text-decoration: none; border-radius: 6px; transition: all 0.2s ease;'>更新课表</a>";
         echo "</div></div>";
     }
-    echo "<div style='border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 250px;'>";
+    echo "<div style='border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; width: 280px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;'>";
     echo "<h3>Github</h3>";
     echo "<p>本项目已开源</p>";
-    echo "<div style='display: flex; gap: 10px; margin-top: 10px;'>";
+    echo "<div style='display: flex; gap: 12px; margin-top: 15px;'>";
     echo "<a href='https://github.com/Yaklo/GetFvtiTimetable' style='padding: 5px 10px; background: #9C27B0; color: white; text-decoration: none; border-radius: 4px;' target='_blank'>GOGOGO</a>";
     echo "</div></div>";
     echo "</div>";
