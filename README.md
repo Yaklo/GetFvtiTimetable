@@ -1,5 +1,5 @@
 # 福州职业技术学院教务系统课程表获取与显示 v2
-请注意，updata/yaklovpn.php，无法直接使用，需要可以直连校园网的环境，具体内容暂不赘述。
+请注意，updata/yaklovpn.php，无法直接使用，updata与submit都需要修改jw.vf.yaklo.cn为教务ip同时可以直连校园网的环境，当然想办法自建反代节点也行。
 使用时记得在submit/yaklovpn.php中填写自己的账号密码以登录教务系统。
 
 webvpn.php（updata=1）需要提交的参数为：
