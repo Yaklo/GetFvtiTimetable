@@ -11,9 +11,7 @@ if (!is_dir($saveDir) && !mkdir($saveDir, 0755, true)) {
     exit("无法创建目录 {$saveDir}");
 }
 
-// 从POST获取验证码和PHPSESSID
-$yzm = $_POST["yzm"] ?? '';
-$phpsessid = $_POST["phpsessid"] ?? '';
+// 校验参数是否为空
 if (empty($yzm) || empty($phpsessid)) {
     exit('缺少验证码或会话ID');
 }

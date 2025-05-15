@@ -1,5 +1,5 @@
 <?php
-function updata_process($class, $updata) {
+function updata_process($class, $updata, $yzm, $phpsessid, $cookie) {
     
     $data = json_decode(file_get_contents("tabledata/{$class}/data.json"), true);
     $classyear = $data['classyear'];
@@ -16,7 +16,10 @@ function updata_process($class, $updata) {
         'classname' => $classname,
         'tableinfo' => $tableinfo,
         'updataurl_1' => $updataurl_1,
-        'updataurl_2' => $updataurl_2
+        'updataurl_2' => $updataurl_2,
+        'yzm' => $yzm,
+        'phpsessid' => $phpsessid,
+        'cookie' => $cookie
     ];
     
     // 检查update.json中的时间是否在5分钟内

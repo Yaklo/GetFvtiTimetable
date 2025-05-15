@@ -11,8 +11,7 @@ if (!is_dir($saveDir) && !mkdir($saveDir, 0755, true)) {
     exit("无法创建目录 {$saveDir}");
 }
 
-// 从POST获取cookie
-$cookie = $_POST["cookie"] ?? '';
+// 校验参数是否为空
 if (empty($cookie)) {
     exit('缺少cookie参数');
 }
