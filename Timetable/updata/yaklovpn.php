@@ -204,7 +204,7 @@ $captchaData = getCaptchaData();
                 <input type="text" id="captcha-input" name="yzm" disabled>
                 <input type="submit" id="submit-btn" value="提交" disabled>
             </div>
-            <a href="?updata=1&class=<?php echo $class; ?>" class="btn">检测到校园网节点离线，点我使用备用接口</a>
+            <a href="?class=<?php echo $class; ?>&updata=1" class="btn">检测到校园网节点离线，点我使用备用接口</a>
         <?php endif; ?>
     </div>
 </body>
