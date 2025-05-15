@@ -8,6 +8,7 @@ function sanitize_input($data) {
 $class = isset($_GET['class']) ? sanitize_input($_GET['class']) : null;
 $style = isset($_GET['style']) ? sanitize_input($_GET['style']) : "1";
 $updata = isset($_GET['updata']) ? sanitize_input($_GET['updata']) : null;
+$upmode = isset($_GET['upmode']) ? sanitize_input($_GET['upmode']) : "1";
 $list = isset($_GET['list']) ? sanitize_input($_GET['list']) : null;
 $week = isset($_GET['week']) ? sanitize_input($_GET['week']) : null;
 
@@ -34,7 +35,7 @@ if(!$is_valid) {
 // 根据参数路由
 if(!empty($updata)) {
     require_once 'updata.php';
-    updata_process($class, $updata, $yzm, $phpsessid, $cookie);
+    updata_process($class, $updata, $upmode, $yzm, $phpsessid, $cookie);
 } else {
     require_once 'style.php';
     style_process($class, $style, $week);

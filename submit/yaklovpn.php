@@ -55,7 +55,7 @@ $updateFile = "{$saveDir}/update.json";
 file_put_contents($updateFile, json_encode(['update' => date('Y-m-d H:i:s')], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
 // 循环获取1-20周数据
-for ($page = 1; $page <= 20; $page++) {
+for ($page = $selectedWeek; $page <= 20; $page++) {
     // 构建请求URL
     $url = "https://jw.vf.yaklo.cn/studentportal.php".$updataurl_1."{$page}".$updataurl_2;
     

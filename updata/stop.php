@@ -68,7 +68,7 @@
 <body>
     <div class="container">
         <h2>福职课表刷新 - <?=$classyear?><?=$classname?></h2>
-        <div class="message">这个班级5分钟内已刷新过，休息一下~</div>
+        <div class="message"><?=$stopinfo?></div>
     </div>
 </body>
 </html>

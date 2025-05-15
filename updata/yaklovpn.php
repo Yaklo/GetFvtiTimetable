@@ -44,7 +44,7 @@ $captchaData = getCaptchaData();
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>福职课表刷新 - 3班</title>
+    <title>福职课表刷新 - <?=$classyear?><?=$classname?></title>
     <style>
         :root {
             --primary-color: #3498db;
@@ -197,13 +197,9 @@ $captchaData = getCaptchaData();
                 <input type="text" id="captcha-input" name="yzm" required>
                 <input type="hidden" id="phpsessid" name="phpsessid" value="<?php echo $captchaData['phpsessid']; ?>">
             </div>
-            <input type="submit" id="submit-btn" value="提交">
+            <input type="submit" id="submit-btn" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>">
         </form>
         <?php else: ?>
-            <div class="form-group">
-                <input type="text" id="captcha-input" name="yzm" disabled>
-                <input type="submit" id="submit-btn" value="提交" disabled>
-            </div>
             <a href="?class=<?php echo $class; ?>&updata=1" class="btn">检测到校园网节点离线，点我使用备用接口</a>
         <?php endif; ?>
     </div>

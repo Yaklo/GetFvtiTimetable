@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>提交表单</title>
+    <title>福职课表刷新 - <?=$classyear?><?=$classname?></title>
     <style>
         :root {
             --primary-color: #3498db;
@@ -106,7 +106,7 @@
                 <label for="data">WebVPN Cookie：</label>
                 <input type="text" id="data" name="cookie" required>
             </div>
-            <input type="submit" value="提交">
+            <input type="submit" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>">
         </form>
     </div>
 </body>

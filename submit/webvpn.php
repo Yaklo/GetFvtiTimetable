@@ -20,7 +20,7 @@ if (empty($cookie)) {
 $num = 0;
 
 // 循环获取1-20周数据
-for ($page = 1; $page <= 20; $page++) {
+for ($page = $selectedWeek; $page <= 20; $page++) {
     // 构建请求URL
     $url = "https://jw.webvpn.fvti.cn/studentportal.php".$updataurl_1."{$page}".$updataurl_2;
     
