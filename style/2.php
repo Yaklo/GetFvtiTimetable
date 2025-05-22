@@ -387,8 +387,9 @@
             </h1>
             
             <div class="update-time">
-                最后更新时间：<?=$updateTime?> <?php if(!empty($otoourl)): ?>｜ 访问地址：otoo.top/<?=$otoourl?> <?php endif; ?>｜ <a href="?style=1<?=!empty($_GET["class"])? "&class=".$_GET["class"] : "" ?><?=!empty($_GET["week"])? "&week=".$_GET["week"] : "" ?>" class="week-btn" style="padding:3px 40px">切换样式</a>
-                <a href="?class=<?=$class?>&updata=2" class="week-btn" style="padding:3px 15px">更新课表</a>
+                最后更新时间：<?=$updateTime?> <?php if(!empty($otoourl)): ?>｜ 访问地址：otoo.top/<?=$otoourl?> <?php endif; ?>｜ <a href="?" class="week-btn" style="padding:3px 15px">返回主页</a>
+                    <a href="?style=1<?=!empty($_GET["class"])? "&class=".$_GET["class"] : "" ?><?=!empty($_GET["week"])? "&week=".$_GET["week"] : "" ?>" class="week-btn" style="padding:3px 40px">切换样式</a>
+                    <a href="?class=<?=$class?>&updata=2" class="week-btn" style="padding:3px 15px">更新课表</a>
             </div>
             
             <div class="quick-nav">
