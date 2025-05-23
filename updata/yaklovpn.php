@@ -174,8 +174,28 @@ $captchaData = getCaptchaData();
         }
     </style>
     <script>
+        function validateForm() {
+            const captchaInput = document.getElementById('captcha-input');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            if (!captchaInput.value) {
+                alert('请填写验证码');
+                return false;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.value = '处理中...';
+            return true;
+        }
+        
         function refreshCaptcha() {
-            window.location.reload();
+            const btn = document.querySelector('.refresh-btn');
+            btn.disabled = true;
+            btn.textContent = '刷新中...';
+            btn.style.opacity = '0.7';
+            setTimeout(() => {
+                window.location.reload();
+            }, 100);
         }
     </script>
 </head>
@@ -186,7 +206,7 @@ $captchaData = getCaptchaData();
             <div id="error-msg" style="display: block"><?php echo $captchaData['error']; ?></div>
         <?php endif; ?>
         <?php if(empty($captchaData['error'])): ?>
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return validateForm()">
                 <input type="hidden" name="class" value="<?php echo $class; ?>">
             <div class="form-group">
                 <img id="captcha-img" src="data:image/jpeg;base64,<?php echo $captchaData['image']; ?>" alt="验证码">

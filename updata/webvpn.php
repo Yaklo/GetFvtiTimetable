@@ -109,11 +109,38 @@
             line-height: 1.6;
         }
     </style>
+    <script>
+        function validateForm() {
+            const cookieInput = document.getElementById('data');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (!cookieInput.value) {
+                alert('请填写WebVPN Cookie');
+                return false;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.value = '处理中...';
+            return true;
+        }
+        
+        function refreshCaptcha() {
+            const btn = document.querySelector('.refresh-btn');
+            if(btn) {
+                btn.disabled = true;
+                btn.textContent = '刷新中...';
+                btn.style.opacity = '0.7';
+                setTimeout(() => {
+                    window.location.reload();
+                }, 100);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h2>福职课表刷新 - <?=$classyear?><?=$classname?></h2>
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return validateForm()">
             <input type="hidden" name="class" value="<?php echo $class; ?>">
             <div class="form-group">
                 <div>为避免请求过快更新一次需要至少20秒</div>
@@ -122,7 +149,7 @@
                 <input type="text" id="data" name="cookie" required>
             </div>
             <div style="display: flex; gap: 10px;">
-                <input type="submit" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>" style="flex: 3;">
+                <input type="submit" id="submit-btn" value="<?php echo $selectedWeek === 1 ? "全量刷新" : "增量刷新" ?>" style="flex: 3;">
                 <a href="?class=<?php echo $class; ?>&updata=<?php echo $updata; ?>&upmode=<?php echo $upmode === "1" ? "0" : "1" ?>" class="btn" style="flex: 1;">模式切换</a>
             </div>
         </form>
