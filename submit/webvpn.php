@@ -99,10 +99,6 @@ for ($page = $selectedWeek; $page <= 20; $page++) {
                 $teacher,
                 $location
             ];
-            
-            // 添加更新时间
-            date_default_timezone_set('Asia/Shanghai');
-            $result['update'] = date('Y-m-d H:i:s');
         }
     }
     
