@@ -47,8 +47,8 @@ for ($page = $selectedWeek; $page <= 20; $page++) {
     @$dom->loadHTML($html);
     $xpath = new DOMXPath($dom);
     
-    
-    $result = [];
+    $result = []; // 数据存储数组
+    $tablenum = []; // 表格计算数组
     // 添加更新时间
     date_default_timezone_set('Asia/Shanghai');
     $result["update"] = date('Y-m-d H:i:s');
@@ -81,6 +81,13 @@ for ($page = $selectedWeek; $page <= 20; $page++) {
         // 遍历当前行的所有单元格(课程信息)
         foreach ($cells as $cell) {
             $day++;  // 星期数递增
+            while (true){
+                if (!isset($tablenum[$day][$timeSlot])){ // 检查时间段是否已被占用
+                    break;  // 当时间段不被占用时，退出循环
+                } else {
+                    $day++;  // 星期数递增
+                }
+            }
             // 获取单元格中的div元素
             $div = $xpath->query('.//div', $cell)->item(0);
             // 如果没有div或div没有title属性则跳过
@@ -108,6 +115,7 @@ for ($page = $selectedWeek; $page <= 20; $page++) {
             // 根据rowspan生成时间范围数组
             for ($i = 0; $i < $rowspan; $i++) {
                 $timeRange[] = $timeSlot + $i;
+                $tablenum[$day][$timeSlot+$i] = 1; // 标记该时间段已被占用
             }
             
             // 如果该星期还没有初始化数组则初始化
