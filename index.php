@@ -11,6 +11,7 @@ $updata = isset($_GET['updata']) ? sanitize_input($_GET['updata']) : null;
 $upmode = isset($_GET['upmode']) ? sanitize_input($_GET['upmode']) : "1";
 $list = isset($_GET['list']) ? sanitize_input($_GET['list']) : null;
 $week = isset($_GET['week']) ? sanitize_input($_GET['week']) : null;
+$api = isset($_GET['api']) ? sanitize_input($_GET['api']) : null;
 
 // 获取并验证POST参数
 $yzm = isset($_POST['yzm']) ? sanitize_input($_POST['yzm']) : null;
@@ -33,7 +34,10 @@ if(!$is_valid) {
 }
 
 // 根据参数路由
-if(!empty($updata)) {
+if(!empty($api) && $api === 'json') {
+    require_once 'api/json.php';
+    json_process($class, $week);
+} else if(!empty($updata)) {
     require_once 'updata.php';
     updata_process($class, $updata, $upmode, $yzm, $phpsessid, $cookie);
 } else {

@@ -39,12 +39,20 @@ function list_process($list) {
         echo "<a href='?class={$class}&updata=2' style='padding: 8px 15px; background: #2196F3; color: white; text-decoration: none; border-radius: 6px; transition: all 0.2s ease;'>更新课表</a>";
         echo "</div></div>";
     }
+    
+    
+    echo "<div style='border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; width: 280px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;'>";
+    echo "<h3>Api支持</h3>";
+    echo "<p>参数：(必填)class(选填)week(必要)api=json</p>";
+    echo "</div>";
+    
     echo "<div style='border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; width: 280px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;'>";
     echo "<h3>Github</h3>";
     echo "<p>本项目已开源</p>";
     echo "<div style='display: flex; gap: 12px; margin-top: 15px;'>";
     echo "<a href='https://github.com/Yaklo/GetFvtiTimetable' style='padding: 5px 10px; background: #9C27B0; color: white; text-decoration: none; border-radius: 4px;' target='_blank'>GOGOGO</a>";
     echo "</div></div>";
+    
     echo "</div>";
     echo "</body>\n</html>";
 }
