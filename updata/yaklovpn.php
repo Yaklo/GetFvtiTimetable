@@ -13,7 +13,7 @@ function getCaptchaData() {
         $response = curl_exec($ch);
         
         if (curl_errno($ch)) {
-            throw new Exception('验证码获取失败: ' . curl_error($ch));
+            throw new Exception('验证码获取失败: ' . '<br>' . curl_error($ch));
         }
         
         $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
